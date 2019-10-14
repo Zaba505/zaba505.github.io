@@ -8,6 +8,7 @@ stages:
   - deploy
 
 build:
+  stage: build
   script:
     - hugo -b https://zaba505.github.io/
   artifacts:
@@ -15,6 +16,7 @@ build:
       - public
 
 deploy:
+  stage: deploy
   dependencies:
     - build
   script:

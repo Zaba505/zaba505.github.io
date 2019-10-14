@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Zaba505</title>
-    <link>/projects/</link>
+    <link>https://zaba505.github.io/projects/</link>
     <description>Recent content in Projects on Zaba505</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 03 Oct 2019 16:03:46 -0400</lastBuildDate>
     
-	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zaba505.github.io/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>@Home</title>
-      <link>/projects/home/</link>
+      <link>https://zaba505.github.io/projects/home/</link>
       <pubDate>Thu, 03 Oct 2019 16:03:46 -0400</pubDate>
       
-      <guid>/projects/home/</guid>
+      <guid>https://zaba505.github.io/projects/home/</guid>
       <description>@Home provides you the ability to fully customize your New Tab page with draggable and resizable widgets.
 Built with Vue.js&amp;hellip;
 @Home can be installed for Firefox and Chrome (Chrome version is currently unreleased).</description>
@@ -24,10 +24,10 @@ Built with Vue.js&amp;hellip;
     
     <item>
       <title>gqlc</title>
-      <link>/projects/gqlc/</link>
+      <link>https://zaba505.github.io/projects/gqlc/</link>
       <pubDate>Thu, 03 Oct 2019 15:54:12 -0400</pubDate>
       
-      <guid>/projects/gqlc/</guid>
+      <guid>https://zaba505.github.io/projects/gqlc/</guid>
       <description>gqlc is built to make implementing and mantaining GraphQL services as painless as possible.
 It achieves this by giving you, the developer, a simple tool for &amp;ldquo;compiling&amp;rdquo; a GraphQL schema into any language you&amp;rsquo;re working with.</description>
     </item>

@@ -11,12 +11,13 @@ build:
   script:
     - hugo -b https://zaba505.github.io/
   artifacts:
-    path:
+    paths:
       - public
 
 deploy:
+  dependencies:
+    - build
   script:
-    - set -e
     - cd public
     - git add .
     - git commit -m "$(git log -1 --pretty=%B)"

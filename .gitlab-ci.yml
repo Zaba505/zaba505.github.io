@@ -15,7 +15,7 @@ build:
       - public
 
 deploy:
-  image: alpine/git
+  image: ellerbrock/alpine-bash-git
   stage: deploy
   dependencies:
     - build

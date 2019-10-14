@@ -1,20 +1,23 @@
-# All available Hugo versions are listed here: https://gitlab.com/pages/hugo/container_registry
 image: registry.gitlab.com/pages/hugo:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-test:
-  script:
-  - hugo
-  except:
-  - master
+stages:
+  - build
+  - deploy
 
-pages:
+build:
   script:
-  - hugo
+    - hugo -b https://zaba505.github.io/
   artifacts:
-    paths:
-    - public
-  only:
-  - master
+    path:
+      - public
+
+deploy:
+  script:
+    - set -e
+    - cd public
+    - git add .
+    - git commit -m "$(git log -1 --pretty=%B)"
+    - git push origin master

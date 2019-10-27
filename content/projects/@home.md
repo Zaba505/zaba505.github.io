@@ -1,7 +1,7 @@
 ---
 title: "@Home"
 date: 2019-10-03T16:03:46-04:00
-description: "A browser extension for Chrome and Firefox."
+description: "A completely customizable New Tab page for Chrome and Firefox."
 homepage: "https://zaba505.gitlab.io/athome"
 ---
 

@@ -11,4 +11,4 @@ draggable and resizable widgets.
 Built with Vue.js...
 
 @Home can be installed for [Firefox](https://addons.mozilla.org/en-US/firefox/addon/athome/)
-and Chrome (Chrome version is currently unreleased).
+and [Chrome](https://chrome.google.com/webstore/detail/home/njkilgjdmdgpnkfmkppbdbaibfahlcof).

@@ -40,5 +40,5 @@ deploy:
   script:
     - cd public
     - git add .
-    - git commit -m $CI_COMMIT_DESCRIPTION
+    - git commit -m "$CI_COMMIT_DESCRIPTION"
     - git push origin master

@@ -15,13 +15,29 @@ build:
       - public
 
 deploy:
-  image: alpine/git
+  image: alpine
   stage: deploy
   dependencies:
     - build
+  only:
+    - master
+  before_script:
+    - 'which ssh-agent || ( apk update -y && apk add openssh-client -y )'
+    - eval $(ssh-agent -s)
+
+    ##
+    ## Add the SSH key stored in DEPLOY_SSH_KEY variable to the agent store
+    ## We're using tr to fix line endings which makes ed25519 keys work
+    ## without extra base64 encoding.
+    ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
+    ##
+    - echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -k -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - git config --global user.email "cakub6@gmx.com"
+    - git config --global user.name "zaba505"
   script:
     - cd public
     - git add .
-    - msg=$(git log -1 --pretty=%B)
-    - git commit -m $msg
+    - git commit -m $CI_COMMIT_DESCRIPTION
     - git push origin master

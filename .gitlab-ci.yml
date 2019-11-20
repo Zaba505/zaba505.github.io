@@ -39,7 +39,7 @@ deploy:
     - git config --global user.email "cakub6@gmx.com"
     - git config --global user.name "zaba505"
     - msg=$(git log -1 --pretty=%B)
-    - git clone https://github.com/Zaba505/zaba505.github.io public
+    - git clone git@github.com:Zaba505/zaba505.github.io public
     - rm -r public/*
     - cd public
     - cp -R ../dist .

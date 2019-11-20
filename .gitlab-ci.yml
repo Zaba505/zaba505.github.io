@@ -40,8 +40,8 @@ deploy:
     - git config --global user.name "zaba505"
     - msg=$(git log -1 --pretty=%B)
     - git clone https://github.com/Zaba505/zaba505.github.io public
+    - rm -r public/*
     - cd public
-    - rm -r .
     - cp -R ../dist .
     - git add .
     - git commit -m "$msg"

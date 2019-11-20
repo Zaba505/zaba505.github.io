@@ -23,6 +23,7 @@ deploy:
     - master
   before_script:
     - 'which ssh-agent || ( apk update && apk add openssh-client )'
+    - 'which git || ( apk update && apk install git )'
     - eval $(ssh-agent -s)
 
     ##

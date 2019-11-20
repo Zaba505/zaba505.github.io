@@ -32,7 +32,7 @@ deploy:
     ## without extra base64 encoding.
     ## https://gitlab.com/gitlab-examples/ssh-private-key/issues/1#note_48526556
     ##
-    - echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -k -
+    - echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
   script:

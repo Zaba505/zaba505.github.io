@@ -21,7 +21,7 @@ deploy:
     - build
   only:
     - master
-  before_script:
+  script:
     - 'which ssh-agent || ( apk update && apk add openssh-client )'
     - 'which git || ( apk update && apk add git )'
     - eval $(ssh-agent -s)
@@ -35,7 +35,6 @@ deploy:
     - echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
-  script:
     - git config --global user.email "cakub6@gmx.com"
     - git config --global user.name "zaba505"
     - msg=$(git log -1 --pretty=%B)

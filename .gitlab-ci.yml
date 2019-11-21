@@ -34,9 +34,9 @@ deploy:
     - echo "$DEPLOY_SSH_KEY" | tr -d '\r' | ssh-add -
     - mkdir -p ~/.ssh
     - chmod 700 ~/.ssh
+    - touch ~/.ssh/known_hosts
     - git config --global user.email "cakub6@gmx.com"
     - git config --global user.name "zaba505"
-    - cat ~/.ssh/known_hosts
     - msg=$(git log -1 --pretty=%B)
     - git clone git@github.com:Zaba505/zaba505.github.io.git public
     - rm -r public/*

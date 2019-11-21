@@ -33,7 +33,7 @@ deploy:
     - msg=$(git log -1 --pretty=%B)
     - git clone git@github.com:Zaba505/zaba505.github.io.git public
     - rm -r public/*
-    - cp -R dist public/
+    - mv dist public
     - cd public
     - git add .
     - git commit -m "$msg"

@@ -15,16 +15,16 @@ build:
       - dist
 
 pages:
-  image: registry.gitlab.com/pages/hugo:latest
+  image: monachus/hugo
   stage: deploy
   only:
     - master
   needs: []
   script:
-    - hugo -b https://zaba505.gitlab.io/ -d ./dist
+    - hugo -b https://zaba505.gitlab.io/
   artifacts:
     paths:
-      - dist
+      - public
 
 deploy:
   image: alpine

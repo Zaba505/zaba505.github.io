@@ -23,12 +23,12 @@ Built with Vue.js&amp;hellip;
     </item>
     
     <item>
-      <title>calc.io</title>
-      <link>https://zaba505.github.io/projects/calc.io/</link>
+      <title>calc.dev</title>
+      <link>https://zaba505.github.io/projects/calc.dev/</link>
       <pubDate>Thu, 03 Oct 2019 16:03:46 -0400</pubDate>
       
-      <guid>https://zaba505.github.io/projects/calc.io/</guid>
-      <description>calc.io is an open-source project with the goal of porting all the functionality of an TI-89 into a Web App.
+      <guid>https://zaba505.github.io/projects/calc.dev/</guid>
+      <description>calc.dev is an open-source project with the goal of porting all the functionality of an TI-89 into a Web App.
 The user interface is built with Vue.js and the computation capabilities are implemented in Rust, which is then compiled to Web Assembly.</description>
     </item>
     

@@ -1,12 +1,12 @@
 ---
-title: "calc.io"
+title: "calc.dev"
 date: 2019-10-03T16:03:46-04:00
-description: "A Graphing Calculator Web App intended to replace all TI-89s"
-homepage: "https://zaba505.gitlab.io/calc.io"
-gitlab_repo: "https://gitlab.com/zaba505/calc.io"
+description: "A modern graphing calculator for modern devices."
+homepage: "https://calc.dev"
+gitlab_repo: "https://gitlab.com/z5labs/calc.dev"
 ---
 
-calc.io is an open-source project with the goal of porting all the functionality
+calc.dev is an open-source project with the goal of porting all the functionality
 of an TI-89 into a Web App.
 
 The user interface is built with [Vue.js](https://vuejs.org) and the computation

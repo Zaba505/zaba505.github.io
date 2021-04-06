@@ -1,10 +1,10 @@
 {
-  "name": "zaba.dev",
+  "name": "zaba505.dev",
   "version": "1.0.0",
   "description": "Personal website",
   "main": "index.js",
-  "repository": "git@gitlab.com:zaba505/zaba505.gitlab.io.git",
-  "author": "zaba505 <cakub6@gmx.com>",
+  "repository": "git@github.com:Zaba505/zaba505.github.io.git",
+  "author": "Zaba505 <cakub6@gmx.com>",
   "license": "MIT",
   "scripts": {
     "docs:dev": "vuepress dev docs",

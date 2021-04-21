@@ -27,11 +27,4 @@ export default defineClientAppEnhance(({
       ]
     }
   });
-
-  const home = router.getRoutes().find(r => r.path === '/');
-
-  router.addRoute({
-    ...home,
-    alias: '/projects'
-  })
 });

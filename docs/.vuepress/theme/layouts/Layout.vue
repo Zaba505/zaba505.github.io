@@ -10,6 +10,14 @@
           <q-btn flat to="/about.html">About</q-btn>
           <q-btn flat :to="{ path: '/projects', force: true }">Projects</q-btn>
         </q-toolbar>
+
+        <q-toolbar v-if="page.path !== '/' && page.path.lastIndexOf('/') > 0" inset>
+          <q-toolbar-title>{{ page.title }}</q-toolbar-title>
+
+          <q-btn v-if="frontmatter.github" :icon="githubIcon" :href="frontmatter.github" type="a" flat round />
+          <q-btn v-if="frontmatter.gitlab" :icon="gitlabIcon" :href="frontmatter.gitlab" type="a" flat round />
+          <q-btn v-if="frontmatter.homepage" :icon="globeIcon" :href="frontmatter.homepage" type="a" flat round />
+        </q-toolbar>
       </q-header>
 
       <q-page-container>
@@ -17,13 +25,13 @@
 
         <About v-else-if="page.path === '/about.html'" />
 
-        <Projects v-else-if="page.path === '/projects'" />
+        <DetailList v-else-if="page.path === '/projects'" />
 
-        <Project v-else />
+        <Detail v-else />
       </q-page-container>
 
       <q-footer class="bg-primary text-dark">
-        <q-toolbar class="text-body1 footer">
+        <q-toolbar class="footer">
           <p>
             © 2021 Carson Derr.
             <a href="https://creativecommons.org/licenses/by/3.0/" title="Creative Commons Attribution">Some rights reserved</a>
@@ -42,9 +50,9 @@
 
 <script>
 import { computed, defineComponent, defineAsyncComponent } from "vue";
-import { usePageData, useSiteData } from "@vuepress/client";
-import { useRouter } from "vue-router";
-import { ionHomeOutline } from "@quasar/extras/ionicons-v5";
+import { usePageData, useSiteData, usePageFrontmatter } from "@vuepress/client";
+import { useRoute, useRouter } from "vue-router";
+import { ionGlobeOutline, ionHomeOutline, ionLogoGithub, ionLogoGitlab } from "@quasar/extras/ionicons-v5";
 import Home from "../components/Home.vue";
 
 export default defineComponent({
@@ -52,22 +60,34 @@ export default defineComponent({
   components: {
     Home,
     About: defineAsyncComponent(() => import("../components/About.vue")),
-    Project: defineAsyncComponent(() => import(/* webpackChunkName: "projects" */ "../components/Project.vue")),
-    Projects: defineAsyncComponent(() => import(/* webpackChunkName: "projects" */ "../components/Projects.vue"))
+    Detail: defineAsyncComponent(() => import(/* webpackChunkName: "projects" */ "../components/Detail.vue")),
+    DetailList: defineAsyncComponent(() => import(/* webpackChunkName: "projects" */ "../components/DetailList.vue"))
   },
   setup() {
     const data = useSiteData();
     const page = usePageData();
+    const frontmatter = usePageFrontmatter();
     const router = useRouter();
+    const route = useRoute();
 
-    const title = computed(() => page.value.path === '/' ? data.value.title : page.value.title);
+    const routes = router.getRoutes();
 
-    console.log(router.getRoutes());
+    const title = computed(() => {
+      const lpos = route.path.lastIndexOf("/");
+      if (lpos === 0) return data.value.title;
+
+
+      return routes.find(r => r.path === route.path.slice(0,lpos)).meta.title;
+    });
 
     return {
       page,
+      frontmatter,
       title,
-      homeIcon: ionHomeOutline
+      globeIcon: ionGlobeOutline,
+      homeIcon: ionHomeOutline,
+      githubIcon: ionLogoGithub,
+      gitlabIcon: ionLogoGitlab,
     };
   }
 })
@@ -95,16 +115,22 @@ html, body {
 .footer {
   justify-content: center;
   align-items: center;
+  color: var(--q-secondary);
+
+  a {
+      color: #3498db;
+      text-decoration: none;
+      -webkit-transition: all .25s ease-in;
+      -moz-transition: all .25s ease-in;
+      -ms-transition: all .25s ease-in;
+      transition: all .25s ease-in;
+      border-radius: 7px;
+      padding: 0 3px;
+  }
+
+  p {
+    margin: 0;
+  }
 }
 
-.footer a {
-    color: #3498db;
-    text-decoration: none;
-    -webkit-transition: all .25s ease-in;
-    -moz-transition: all .25s ease-in;
-    -ms-transition: all .25s ease-in;
-    transition: all .25s ease-in;
-    border-radius: 7px;
-    padding: 0 3px;
-}
 </style>

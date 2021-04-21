@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    Project
+    <Content />
   </q-page>
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Project",
+  name: "Detail",
   setup() {
     return {};
   }

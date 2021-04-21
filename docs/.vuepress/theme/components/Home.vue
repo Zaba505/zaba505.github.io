@@ -8,6 +8,10 @@
     </div>
 
     <div class="content">
+      <h2 style="margin: 0; padding: 0">
+        {{ pageData.name }}
+      </h2>
+
       <Content />
     </div>
   </q-page>

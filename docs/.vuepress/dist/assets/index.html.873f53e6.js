@@ -1,0 +1,1 @@
+const e={key:"v-8daa1a0e",path:"/",title:"",lang:"en-US",frontmatter:{home:!0,heroText:"Richard Carson Derr"},excerpt:"",headers:[],git:{updatedTime:1618990725e3,contributors:[{name:"Zaba505",email:"cakub6@gmx.com",commits:1}]},filePathRelative:"README.md"};export{e as data};

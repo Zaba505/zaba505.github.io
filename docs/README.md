@@ -1,8 +1,4 @@
 ---
-avatar: images/avatar.jpg
-github: https://github.com/Zaba505
-gitlab: https://gitlab.com/zaba505
-name: Carson Derr
+home: true
+heroText: Richard Carson Derr
 ---
-
-**Software Developer**

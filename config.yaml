@@ -2,3 +2,20 @@ baseURL: 'https://zaba505.github.io'
 languageCode: 'en-us'
 title: 'Zaba505'
 theme: 'PaperMod'
+
+params:
+  description: 'A personal site for showcasing various projects and hosting blog posts'
+  author: 'Zaba505'
+
+  profileMode:
+    enabled: true
+    title: 'Richard Carson Derr'
+    subTitle: 'Go priest, Java practitioner, and tinkerer in everything else'
+
+  socialIcons:
+    - name: 'github'
+      url: 'https://github.com/Zaba505'
+    - name: 'gitlab'
+      url: 'https://gitlab.com/zaba505'
+    - name: 'linkedin'
+      url: 'https://www.linkedin.com/in/richard-derr-670566138/'

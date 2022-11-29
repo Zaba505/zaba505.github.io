@@ -7,7 +7,10 @@ summary: "About me"
 
 ### About me
 
-I'm a Software Engineer.
+I’m a self-taught developer with a curiosity to learn about anything,
+from distributed systems to design systems and everything in-between.
+When I'm not behind a keyboard I enjoy skateboarding, playing on the water,
+and building things by hand (mainly woodworking).
 
 ### Certifications
 

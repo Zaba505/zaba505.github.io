@@ -3,9 +3,16 @@ languageCode: 'en-us'
 title: 'Zaba505'
 theme: 'PaperMod'
 
+menu:
+  main:
+    - identifier: 'about'
+      name: 'About'
+      url: '/about'
+      weight: 10
+
 params:
-  description: 'A personal site for showcasing various projects and hosting blog posts'
   author: 'Zaba505'
+  description: 'A personal site for showcasing various projects and hosting blog posts'
 
   profileMode:
     enabled: true

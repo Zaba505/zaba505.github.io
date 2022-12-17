@@ -22,7 +22,10 @@ jobs:
           glob_root_file: true
 
       - name: Move PDFs to static/
-        run: mv "*.pdf" static/
+        run: |
+          ls .
+          ls research/
+          mv "*.pdf" static/
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

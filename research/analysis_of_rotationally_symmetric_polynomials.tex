@@ -25,6 +25,50 @@
   Multiplication by -1 is equivalent to a rotation about the origin of $\pi$ radians.
 \end{lemma}
 
+\begin{proof}
+  $R_\theta$
+  $\begin{bmatrix}
+    x \\
+    y
+  \end{bmatrix}$
+  =
+  $\begin{bmatrix}
+    cos(\theta) & -sin(\theta) \\
+    sin(\theta) & cos(\theta)
+  \end{bmatrix}$
+  $\begin{bmatrix}
+    x \\
+    y
+  \end{bmatrix}$
+  =
+  -1
+  $\begin{bmatrix}
+    x \\
+    y
+  \end{bmatrix}$
+
+  $\implies$
+  $\begin{matrix}
+    x cos(\theta) - y sin(\theta) = -x\\
+    x sin(\theta) + y cos(\theta) = -y
+  \end{matrix}$
+
+  $\implies$
+  $\begin{matrix}
+    cos(\theta) = -1 \\
+    sin(\theta) = 0 \\
+  \end{matrix}$
+
+  $\implies$
+  $\theta = (2n-1)\pi, \forall n \in \mathbb{N}$
+
+  Now, restricting n to 1 so that we arrive at $\theta = \pi$, which
+  gives us multiplication by -1 is equivalent to a rotation of $\pi$ radians.
+  This restriction can be thought of intuitively as us defining multiplication by
+  -1 as the smallest rotational increment allowed. Thus, successive iterations of
+  multiplication would simply equate to $n$ multiples of $\theta$.
+\end{proof}
+
 \begin{definition}
   A function is considered "odd", if $\forall x \in \mathbb{R}$, f(-x) = f(x).
 \end{definition}

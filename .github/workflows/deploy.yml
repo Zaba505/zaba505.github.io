@@ -21,6 +21,7 @@ jobs:
           root_file: "*.tex"
           glob_root_file: true
           working_directory: research
+          work_in_root_file_dir: true
 
       - name: Move PDFs to static/
         run: mv "research/*.pdf" static/

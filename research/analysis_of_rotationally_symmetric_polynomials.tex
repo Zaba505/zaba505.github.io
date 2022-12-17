@@ -1,7 +1,13 @@
 \documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \title{Analysis of Rotationally Symmetric Polynomials}
 \author{Richard Carson Derr (cakub6@gmx.com)}
 \date{2022-12-16}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
 \begin{document}
 \maketitle
 
@@ -14,5 +20,27 @@
   functions. Then, conclude with an application of this
   framework on the set of polynomial functions.
 \end{abstract}
+
+\begin{lemma}
+  Multiplication by -1 is equivalent to a rotation about the origin of $\pi$ radians.
+\end{lemma}
+
+\begin{definition}
+  A function is considered "odd", if $\forall x \in \mathbb{R}$, f(-x) = f(x).
+\end{definition}
+
+\begin{lemma}
+  All odd functions are rotationally symmetric.
+\end{lemma}
+
+\begin{definition}
+  Let f be a function over $\mathbb{R}$. We then define the shift or translation operator, $T^t$, with the following
+  functional equation, $T^t f(x) = f(x+t)$.
+\end{definition}
+
+\begin{theorem}
+  Let F be a set of functions over $\mathbb{R}$. If $\forall f\in F$, $\exists T^t$
+  s.t. $T^t(f) = g, g(-x) = -g(x)$, then all $f \in F$ are rotationally symmetric.
+\end{theorem}
 
 \end{document}

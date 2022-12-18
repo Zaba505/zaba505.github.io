@@ -7,6 +7,7 @@
 \date{2022-12-16}
 \newtheorem{definition}{Definition}
 \newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
 \newtheorem{theorem}{Theorem}
 \begin{document}
 \maketitle
@@ -96,7 +97,7 @@
   \end{center}
 \end{definition}
 
-\begin{lemma}
+\begin{lemma}\label{oddrotlemma}
   All odd functions are rotationally symmetric.
 \end{lemma}
 
@@ -140,9 +141,38 @@
   $T^t f(x) = f(x+t)$, where $t \in \mathbf{F}$.
 \end{definition}
 
+\begin{remark}\label{shiftsymremark}
+  Shift operators preserve all symmetries of the function they're applied to.
+\end{remark}
+
 \begin{theorem}
-  Let $\mathbb{F}$ be a set of functions over $\mathbb{R}$. If $\forall f\in F$, $\exists T^t$
+  Let $\mathbb{F}$ be a set of functions over a field, $\mathbf{F}$. If $\forall f\in \mathbb{F}$, $\exists t \in \mathbf{F}$
   s.t. $T^t(f) = g, g(-x) = -g(x)$, then all $f \in F$ are rotationally symmetric.
 \end{theorem}
+
+\begin{proof}
+  Let $f \in \mathbb{F}$ and suppose $\exists t \in \mathbf{F}$ such that
+
+  \begin{center}
+    $T^t(f) = g, g(-x) = -g(x)$
+  \end{center}
+
+  Then, by Lemma \ref{oddrotlemma}, $g$ is rotationally symmetric. Now, note that since $\mathbf{F}$ is a field,
+  we can define another shift operator, $T^{-t}$, such that
+
+  \begin{center}
+    \begin{equation}\label{inverseshifteq}
+      \begin{split}
+        T^{-t}(g)
+        &= T^{-t} T^t f(x) \\
+        &= T^{-t} f(x+t) \\
+        &= f(x+t-t) \\
+        &= f(x)
+      \end{split}
+    \end{equation}
+  \end{center}
+
+  Finally, by Eq. \ref{inverseshifteq} and Remark \ref{shiftsymremark}, $f$ is rotationally symmetric.
+\end{proof}
 
 \end{document}

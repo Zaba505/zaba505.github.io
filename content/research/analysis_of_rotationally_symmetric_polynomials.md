@@ -3,6 +3,17 @@ linkTitle: 'Analysis of Rotationally Symmetric Polynomials'
 title: "Analysis of Rotationally Symmetric Polynomials"
 url: "/research/analysis-of-rotationally-symmetric-polynomials"
 summary: "An investigation into the set of non-trivially, rotationally, symmetric polynomials"
+categories:
+  - mathematics
+  - real analysis
+tags:
+  - wip
+  - fields
+  - sets
+  - functions
+  - functionals
+  - polynomials
+  - vector spaces
 ---
 
 ### Abstract

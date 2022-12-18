@@ -1,7 +1,14 @@
 \documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
 \title{Analysis of Rotationally Symmetric Polynomials}
 \author{Richard Carson Derr (cakub6@gmx.com)}
 \date{2022-12-16}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
 \begin{document}
 \maketitle
 
@@ -14,5 +21,158 @@
   functions. Then, conclude with an application of this
   framework on the set of polynomial functions.
 \end{abstract}
+
+\begin{lemma}\label{negrot}
+  Multiplication by -1 is equivalent to a rotation about the origin of $\pi$ radians.
+\end{lemma}
+
+\begin{proof}
+  Let $\mathbf{F}$ be a field and $\begin{bmatrix}
+    x \\
+    y
+  \end{bmatrix}
+  \in
+  \mathbf{F}^2$.
+  Note, $\mathbf{F}^2$ is naturally a vector space over $\mathbf{F}$.
+
+  \begin{equation}
+    R_\theta
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+      cos(\theta) & -sin(\theta) \\
+      sin(\theta) & cos(\theta)
+    \end{bmatrix}
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+    =
+    -1
+    \begin{bmatrix}
+      x \\
+      y
+    \end{bmatrix}
+  \end{equation}
+
+  \begin{equation}
+    \begin{matrix}
+      x cos(\theta) - y sin(\theta) = -x\\
+      x sin(\theta) + y cos(\theta) = -y
+    \end{matrix}
+  \end{equation}
+  \begin{equation}
+    \begin{matrix}
+      cos(\theta) = -1 \\
+      sin(\theta) = 0 \\
+    \end{matrix}
+  \end{equation}
+  \begin{equation}\label{rottheta}
+    \theta = (2n-1)\pi, \forall n \in \mathbb{N}
+  \end{equation}
+
+  Now, restricting n to 1 in Eq. \ref{rottheta}, we arrive at $\theta = \pi$, which
+  gives us multiplication by -1 is equivalent to a rotation of $\pi$ radians.
+  This restriction can be thought of intuitively as us defining multiplication by
+  -1 as the smallest rotational increment allowed. Thus, successive iterations of
+  multiplication would simply equate to $n$ multiples of $\theta$.
+\end{proof}
+
+\begin{definition}\label{odddef}
+  Let $f$ be a function over a field, $\mathbf{F}$. f is considered "odd", if
+
+  \begin{center}
+    $\forall x \in \mathbf{F}$, f(-x) = -f(x).
+  \end{center}
+\end{definition}
+
+\begin{definition}\label{graphdef}
+  The graph of a function, $f:\mathbf{F} \rightarrow \mathbf{F}$, can be expressed as,
+
+  \begin{center}
+    $graph(f) = \{\,(x, f(x)) \mid x \in \mathbf{F}\,\}$
+  \end{center}
+\end{definition}
+
+\begin{lemma}\label{oddrotlemma}
+  All odd functions are rotationally symmetric.
+\end{lemma}
+
+\begin{proof}
+  Let $f$ be an odd function over some field, $\mathbf{F}$. Then, by Def. \ref{graphdef} and the definition of a field,
+  $(-x, f(-x)) \in graph(f)$. Also, note that $graph(f) \subseteq \mathbf{F}^2$, where
+  $\mathbf{F}^2$ is naturally a vector space over $\mathbf{F}$. Thus,
+
+  \begin{equation}
+    \begin{split}
+      (-x, f(-x))
+      &= \begin{bmatrix}
+        -x \\
+        f(-x)
+      \end{bmatrix} (\in \mathbf{F}^2)\\
+      &= \begin{bmatrix}
+        -x \\
+        -f(x) \\
+      \end{bmatrix} (by\ Def.\ \ref{odddef}) \\
+      &= -1 * \begin{bmatrix}
+        x \\
+        f(x)
+      \end{bmatrix} \\
+      &= R_\pi \begin{bmatrix}
+        x \\
+        f(x)
+      \end{bmatrix} (by\ Lemma\ \ref{negrot})
+    \end{split}
+  \end{equation}
+
+  which provides the conclusion,
+
+  \begin{center}
+    $\forall p \in graph(f),\ \exists q \in graph(f)\ s.t.\ q = R_\pi p$
+  \end{center}
+\end{proof}
+
+\begin{definition}\label{shiftdef}
+  Let $f$ be a function over some field, $\mathbf{F}$. We then define the shift or
+  translation operator, $T^t$, with the following functional equation,
+  $T^t f(x) = f(x+t)$, where $t \in \mathbf{F}$.
+\end{definition}
+
+\begin{remark}\label{shiftsymremark}
+  Shift operators preserve all symmetries of the function they're applied to.
+\end{remark}
+
+\begin{theorem}
+  Let $\mathbb{F}$ be a set of functions over a field, $\mathbf{F}$. If $\forall f\in \mathbb{F}$, $\exists t \in \mathbf{F}$
+  s.t. $T^t(f) = g, g(-x) = -g(x)$, then all $f \in F$ are rotationally symmetric.
+\end{theorem}
+
+\begin{proof}
+  Let $f \in \mathbb{F}$ and suppose $\exists t \in \mathbf{F}$ such that
+
+  \begin{center}
+    $T^t(f) = g, g(-x) = -g(x)$
+  \end{center}
+
+  Then, by Lemma \ref{oddrotlemma}, $g$ is rotationally symmetric. Now, note that since $\mathbf{F}$ is a field,
+  we can define another shift operator, $T^{-t}$, such that
+
+  \begin{center}
+    \begin{equation}\label{inverseshifteq}
+      \begin{split}
+        T^{-t}(g)
+        &= T^{-t} T^t f(x) \\
+        &= T^{-t} f(x+t) \\
+        &= f(x+t-t) \\
+        &= f(x)
+      \end{split}
+    \end{equation}
+  \end{center}
+
+  Finally, by Eq. \ref{inverseshifteq} and Remark \ref{shiftsymremark}, $f$ is rotationally symmetric.
+\end{proof}
 
 \end{document}

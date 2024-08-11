@@ -11,6 +11,10 @@ menu:
       name: 'About'
       url: '/about'
       weight: 10
+    - identifier: 'home-lab'
+      name: 'Home Lab'
+      url: '/infra'
+      weight: 15
     - identifier: 'research'
       name: 'Research'
       url: '/research'

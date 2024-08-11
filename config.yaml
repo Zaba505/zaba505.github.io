@@ -1,7 +1,9 @@
-baseURL: 'https://zaba505.dev'
 languageCode: 'en-us'
 title: 'Zaba505'
-theme: 'PaperMod'
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
 
 menu:
   main:
@@ -9,6 +11,10 @@ menu:
       name: 'About'
       url: '/about'
       weight: 10
+    - identifier: 'home-lab'
+      name: 'Home Lab'
+      url: '/infra'
+      weight: 15
     - identifier: 'research'
       name: 'Research'
       url: '/research'

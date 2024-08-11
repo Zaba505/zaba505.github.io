@@ -1,7 +1,9 @@
-baseURL: 'https://zaba505.dev'
 languageCode: 'en-us'
 title: 'Zaba505'
-theme: 'PaperMod'
+
+module:
+  imports:
+    - path: github.com/adityatelange/hugo-PaperMod
 
 menu:
   main:

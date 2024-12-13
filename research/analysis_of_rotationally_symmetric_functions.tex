@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\title{Analysis of Rotationally Symmetric Functions}
+\author{Richard Carson Derr (cakub6@gmx.com)}
+\date{2022-12-16}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  Lorem ipsum
+\end{abstract}
+
+\begin{definition}\label{rotationoperator}
+  We define the rotation operator in $\mathbf{R}^2$ as the following,
+  \begin{equation}
+    R_\theta
+    =
+    \begin{bmatrix}
+      cos(\theta) & -sin(\theta) \\
+      sin(\theta) & cos(\theta)
+    \end{bmatrix}      
+  \end{equation}
+\end{definition}
+
+\begin{lemma}
+  \begin{equation}
+    R_theta * R_phi = R_{\theta + \phi}
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  \begin{equation}
+    \begin{split}
+      R_theta * R_phi
+      &=
+      \begin{bmatrix}
+        cos(\theta) & -sin(\theta) \\
+        sin(\theta) & cos(\theta)
+      \end{bmatrix}
+      \begin{bmatrix}
+        cos(\phi) & -sin(\phi) \\
+        sin(\phi) & cos(\phi)
+      \end{bmatrix} \\
+      &=
+      \begin{bmatrix}
+        cos(\theta)cos(\phi) - sin(\theta)sin(\phi) & -(cos(\theta)sin(\phi) + sin(\theta)cos(\phi)) \\
+        cos(\theta)sin(\phi) + sin(\theta)cos(\phi) & cos(\theta)cos(\phi) - sin(\theta)sin(\phi)
+      \end{bmatrix} \\
+      &=
+      \begin{bmatrix}
+        cos(\theta + \phi) & -sin(\theta + \phi) \\
+        sin(\theta + \phi) & cos(\theta + \phi)
+      \end{bmatrix} \\
+      &=
+      R_{\theta + \phi}
+    \end{split}
+  \end{equation}
+\end{proof}
+
+\begin{lemma}
+  \begin{equation}
+    [R_theta, R_phi] = 0
+  \end{equation}
+\end{lemma}
+
+\begin{proof}
+  \begin{equation}
+    \begin{split}
+      [R_theta, R_phi]
+      &= R_theta R_phi - R_phi R_theta \\
+      &= R_{\theta + \phi} - R_{\phi + \theta} \\
+      &= 0
+    \end{split}
+  \end{equation}
+\end{proof}
+
+\begin{remark}
+  By the above, we observe the following:
+  \begin{equation}
+    R_theta R_{- \theta} = R_{- \theta} R_theta = R_{\theta - \theta} = R_0 = I
+  \end{equation}
+\end{remark}
+
+\end{document}
